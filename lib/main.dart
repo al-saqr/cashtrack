@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -10,31 +10,46 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Center(
+      home: DefaultTabController(
+        length: 4,
+        child: Scaffold(
+          appBar: AppBar(
+            title: const Center(
               child: Text(
-            'Accounts',
-          )),
-          leading: IconButton(
-            alignment: Alignment.centerLeft,
-            onPressed: () {},
-            icon: const Icon(Icons.settings),
+                'Accounts',
+              ),
+            ),
+            leading: IconButton(
+              alignment: Alignment.centerLeft,
+              onPressed: () {},
+              icon: const Icon(Icons.settings),
+            ),
+            actions: [
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.search),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.add),
+              ),
+            ],
+            bottom: const TabBar(
+              tabs: [
+                Tab(text: 'tab1'),
+                Tab(text: 'Tab2'),
+                Tab(text: 'tab3'),
+                Tab(text: 'tab4'),
+              ],
+            ),
           ),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.search),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.add),
-            ),
-          ],
-        ),
-        body: Center(
-          child: Container(
-            child: Text('Hello World'),
+          body: const TabBarView(
+            children: [
+              Center(child: Text('tab1')),
+              Center(child: Text('tab2')),
+              Center(child: Text('tab3')),
+              Center(child: Text('tab4')),
+            ],
           ),
         ),
       ),
