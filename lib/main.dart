@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
         length: 4,
         child: Scaffold(
           appBar: AppBar(
+            backgroundColor: Colors.red.shade300,
             title: const Center(
               child: Text(
                 'Accounts',
@@ -36,19 +37,19 @@ class MyApp extends StatelessWidget {
             ],
             bottom: const TabBar(
               tabs: [
-                Tab(text: 'tab1'),
-                Tab(text: 'Tab2'),
-                Tab(text: 'tab3'),
-                Tab(text: 'tab4'),
+                Tab(text: 'DAILY'),
+                Tab(text: 'WEEKLY'),
+                Tab(text: 'MONTHLY'),
+                Tab(text: 'YEARLY'),
               ],
             ),
           ),
           body: const TabBarView(
             children: [
-              Center(child: Text('tab1')),
-              Center(child: Text('tab2')),
-              Center(child: Text('tab3')),
-              Center(child: Text('tab4')),
+              Center(child: Text('DAILY')),
+              Center(child: Text('WEEKLY')),
+              Center(child: Text('MONTHLY')),
+              Center(child: Text('YEARLY')),
             ],
           ),
         ),
