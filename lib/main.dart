@@ -1,9 +1,22 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+
+  final widgets = [
+    '1',
+    '3232',
+    '434343',
+    'asdasds',
+    'adasdsa',
+    'asdsasda',
+    'dasdsa',
+    'asdsad',
+    'asdsad',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -37,19 +50,41 @@ class MyApp extends StatelessWidget {
             ],
             bottom: const TabBar(
               tabs: [
-                Tab(text: 'DAILY'),
+                Tab(
+                  text: 'DAILY',
+                ),
                 Tab(text: 'WEEKLY'),
                 Tab(text: 'MONTHLY'),
                 Tab(text: 'YEARLY'),
               ],
             ),
           ),
-          body: const TabBarView(
+          body: TabBarView(
             children: [
-              Center(child: Text('DAILY')),
-              Center(child: Text('WEEKLY')),
-              Center(child: Text('MONTHLY')),
-              Center(child: Text('YEARLY')),
+              const Center(child: Text('DAILY')),
+              const Center(child: Text('WEEKLY')),
+              ListView(
+                children: [
+                  CarouselSlider(
+                    options: CarouselOptions(),
+                    items: const [
+                      Text('data'),
+                      Text('data1'),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Text('data'),
+                    ],
+                  ),
+                  Text('data'),
+                  Text('data'),
+                  Text('data'),
+                  Text('data'),
+                  Text('data'),
+                ],
+              ),
+              const Center(child: Text('YEARLY')),
             ],
           ),
         ),
