@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:cashtrack/carousel_with_indicator.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -63,27 +64,7 @@ class MyApp extends StatelessWidget {
             children: [
               const Center(child: Text('DAILY')),
               const Center(child: Text('WEEKLY')),
-              ListView(
-                children: [
-                  CarouselSlider(
-                    options: CarouselOptions(),
-                    items: const [
-                      Text('data'),
-                      Text('data1'),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text('data'),
-                    ],
-                  ),
-                  Text('data'),
-                  Text('data'),
-                  Text('data'),
-                  Text('data'),
-                  Text('data'),
-                ],
-              ),
+              Container(child: CarouselWithIndicatorDemo()),
               const Center(child: Text('YEARLY')),
             ],
           ),
