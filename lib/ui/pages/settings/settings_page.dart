@@ -7,18 +7,37 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text(
+          'Settings',
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         backgroundColor: Colors.white,
-        leadingWidth: 70,
         leading: TextButton(
+          onPressed: () {},
+          child: const Text(
+            style: TextStyle(
+                color: Color.fromARGB(255, 55, 199, 175),
+                fontWeight: FontWeight.bold),
+            'Cancel',
+          ),
+        ),
+        actions: [
+          TextButton(
             onPressed: () {},
-            child: Text(
+            child: const Text(
+              'Save',
               style: TextStyle(
-                  color: Colors.green.shade500, fontWeight: FontWeight.bold),
-              'Cancel',
-            )),
+                color: Colors.green,
+              ),
+            ),
+          ),
+        ],
       ),
       body: Container(
-        color: Colors.black,
+        color: Colors.transparent,
       ),
     );
   }

@@ -5,6 +5,6 @@ class DailyTabPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(child: Text('DAILY'));
+    return const Text('DAILY');
   }
 }

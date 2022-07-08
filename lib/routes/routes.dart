@@ -5,6 +5,6 @@ import '../ui/pages/settings/settings_page.dart';
 
 Map<String, WidgetBuilder> routes = {
   '/': (context) => const MainPage(),
-  '/settings': (context) => SettingsPage(),
+  '/settings': (context) => const SettingsPage(),
   // '/search': (context) => SearchPage(),
 };

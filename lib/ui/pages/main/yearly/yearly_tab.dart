@@ -5,6 +5,6 @@ class YearlyTabPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('YEARLY'));
+    return const Text('YEARLY');
   }
 }

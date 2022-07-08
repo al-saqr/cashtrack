@@ -5,6 +5,6 @@ class WeeklyTabPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('WEEKLY'));
+    return const Text('WEEKLY');
   }
 }
