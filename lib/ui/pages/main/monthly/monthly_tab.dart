@@ -23,7 +23,7 @@ class MonthlyTabPage extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  '\$ 25 000 000',
+                  r'$ 25 000 000',
                   style: TextStyle(
                     fontSize: 42,
                     fontWeight: FontWeight.bold,
