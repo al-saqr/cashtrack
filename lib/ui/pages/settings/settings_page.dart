@@ -8,34 +8,41 @@ class SettingsPage extends StatelessWidget {
     final heightOfDevice = MediaQuery.of(context).size.height;
     final widthOfDevice = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Column(
+      body: Stack(
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              TopBarWidget(),
-              Padding(
-                padding: EdgeInsets.only(left: 10, top: 15),
-                child: Text('Main'),
-              ),
-              MainSettingsWidget(),
-              Padding(
-                padding: EdgeInsets.only(left: 10, top: 15),
-                child: Text('Premium'),
-              ),
-              PremiumSettingsWidget(),
-            ],
+          Container(
+            color: Colors.black12,
           ),
           Column(
-            children: const [
-              Padding(
-                padding: EdgeInsets.only(top: 18, bottom: 100),
-                child: SubscribeButtonWidget(),
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  _TopBarWidget(),
+                  Padding(
+                    padding: EdgeInsets.only(left: 10, top: 15),
+                    child: Text('Main'),
+                  ),
+                  MainSettingsWidget(),
+                  Padding(
+                    padding: EdgeInsets.only(left: 10, top: 15),
+                    child: Text('Premium'),
+                  ),
+                  PremiumSettingsWidget(),
+                ],
               ),
-              SendReviewButtonWidget(),
-              Padding(
-                padding: EdgeInsets.only(bottom: 20, top: 10),
-                child: RateInAppStoreButtonWidget(),
+              Column(
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.only(top: 18, bottom: 100),
+                    child: SubscribeButtonWidget(),
+                  ),
+                  SendReviewButtonWidget(),
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 20, top: 10),
+                    child: RateInAppStoreButtonWidget(),
+                  ),
+                ],
               ),
             ],
           ),
@@ -112,109 +119,112 @@ class PremiumSettingsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <TextButton>[
-        TextButton(
-          onPressed: () {},
-          child: Row(
-            children: [
-              Expanded(flex: 1, child: Container(color: Colors.transparent)),
-              Text('Icon set'),
-              Expanded(
-                flex: 10,
-                child: Container(
-                  color: Colors.transparent,
+    return Container(
+      color: Colors.white,
+      child: Column(
+        children: <TextButton>[
+          TextButton(
+            onPressed: () {},
+            child: Row(
+              children: [
+                Expanded(flex: 1, child: Container(color: Colors.transparent)),
+                Text('Icon set'),
+                Expanded(
+                  flex: 10,
+                  child: Container(
+                    color: Colors.transparent,
+                  ),
                 ),
-              ),
-              Icon(
-                Icons.paid_outlined,
-                color: Colors.green,
-              ),
-              Expanded(
-                flex: 1,
-                child: Container(
-                  color: Colors.transparent,
+                Icon(
+                  Icons.paid_outlined,
+                  color: Colors.green,
                 ),
-              )
-            ],
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    color: Colors.transparent,
+                  ),
+                )
+              ],
+            ),
           ),
-        ),
-        TextButton(
-          onPressed: () {},
-          child: Row(
-            children: [
-              Expanded(flex: 1, child: Container(color: Colors.transparent)),
-              Text('Backups'),
-              Expanded(
-                flex: 10,
-                child: Container(
-                  color: Colors.transparent,
+          TextButton(
+            onPressed: () {},
+            child: Row(
+              children: [
+                Expanded(flex: 1, child: Container(color: Colors.transparent)),
+                Text('Backups'),
+                Expanded(
+                  flex: 10,
+                  child: Container(
+                    color: Colors.transparent,
+                  ),
                 ),
-              ),
-              Icon(
-                Icons.paid_outlined,
-                color: Colors.green,
-              ),
-              Expanded(
-                flex: 1,
-                child: Container(
-                  color: Colors.transparent,
+                Icon(
+                  Icons.paid_outlined,
+                  color: Colors.green,
                 ),
-              )
-            ],
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    color: Colors.transparent,
+                  ),
+                )
+              ],
+            ),
           ),
-        ),
-        TextButton(
-          onPressed: () {},
-          child: Row(
-            children: [
-              Expanded(flex: 1, child: Container(color: Colors.transparent)),
-              Text('Export'),
-              Expanded(
-                flex: 10,
-                child: Container(
-                  color: Colors.transparent,
+          TextButton(
+            onPressed: () {},
+            child: Row(
+              children: [
+                Expanded(flex: 1, child: Container(color: Colors.transparent)),
+                Text('Export'),
+                Expanded(
+                  flex: 10,
+                  child: Container(
+                    color: Colors.transparent,
+                  ),
                 ),
-              ),
-              Icon(
-                Icons.paid_outlined,
-                color: Colors.green,
-              ),
-              Expanded(
-                flex: 1,
-                child: Container(
-                  color: Colors.transparent,
+                Icon(
+                  Icons.paid_outlined,
+                  color: Colors.green,
                 ),
-              )
-            ],
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    color: Colors.transparent,
+                  ),
+                )
+              ],
+            ),
           ),
-        ),
-        TextButton(
-          onPressed: () {},
-          child: Row(
-            children: [
-              Expanded(flex: 1, child: Container(color: Colors.transparent)),
-              Text('Security'),
-              Expanded(
-                flex: 10,
-                child: Container(
-                  color: Colors.transparent,
+          TextButton(
+            onPressed: () {},
+            child: Row(
+              children: [
+                Expanded(flex: 1, child: Container(color: Colors.transparent)),
+                Text('Security'),
+                Expanded(
+                  flex: 10,
+                  child: Container(
+                    color: Colors.transparent,
+                  ),
                 ),
-              ),
-              Icon(
-                Icons.paid_outlined,
-                color: Colors.green,
-              ),
-              Expanded(
-                flex: 1,
-                child: Container(
-                  color: Colors.transparent,
+                Icon(
+                  Icons.paid_outlined,
+                  color: Colors.green,
                 ),
-              )
-            ],
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    color: Colors.transparent,
+                  ),
+                )
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
@@ -226,75 +236,78 @@ class MainSettingsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        TextButton(
-          onPressed: () {},
-          child: Row(
-            children: [
-              Expanded(flex: 1, child: Container(color: Colors.transparent)),
-              Text('Currency'),
-              Expanded(
-                flex: 10,
-                child: Container(
-                  color: Colors.transparent,
+    return Container(
+      color: Colors.white,
+      child: Column(
+        children: [
+          TextButton(
+            onPressed: () {},
+            child: Row(
+              children: [
+                Expanded(flex: 1, child: Container(color: Colors.transparent)),
+                Text('Currency'),
+                Expanded(
+                  flex: 10,
+                  child: Container(
+                    color: Colors.transparent,
+                  ),
                 ),
-              ),
-              Text('USD'),
-              Icon(
-                Icons.chevron_right,
-                color: Colors.grey,
-              ),
-            ],
-          ),
-        ),
-        TextButton(
-          onPressed: () {},
-          child: Row(
-            children: [
-              Expanded(flex: 1, child: Container(color: Colors.transparent)),
-              Text('Appearance'),
-              Expanded(
-                flex: 10,
-                child: Container(
-                  color: Colors.transparent,
+                Text('USD'),
+                Icon(
+                  Icons.chevron_right,
+                  color: Colors.grey,
                 ),
-              ),
-              Text('USD'),
-              Icon(
-                Icons.chevron_right,
-                color: Colors.grey,
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-        TextButton(
-          onPressed: () {},
-          child: Row(
-            children: [
-              Expanded(flex: 1, child: Container(color: Colors.transparent)),
-              Text('Additionally'),
-              Expanded(
-                flex: 10,
-                child: Container(
-                  color: Colors.transparent,
+          TextButton(
+            onPressed: () {},
+            child: Row(
+              children: [
+                Expanded(flex: 1, child: Container(color: Colors.transparent)),
+                Text('Appearance'),
+                Expanded(
+                  flex: 10,
+                  child: Container(
+                    color: Colors.transparent,
+                  ),
                 ),
-              ),
-              Text('USD'),
-              Icon(
-                Icons.chevron_right,
-                color: Colors.grey,
-              ),
-            ],
+                Text('USD'),
+                Icon(
+                  Icons.chevron_right,
+                  color: Colors.grey,
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+          TextButton(
+            onPressed: () {},
+            child: Row(
+              children: [
+                Expanded(flex: 1, child: Container(color: Colors.transparent)),
+                Text('Additionally'),
+                Expanded(
+                  flex: 10,
+                  child: Container(
+                    color: Colors.transparent,
+                  ),
+                ),
+                Text('USD'),
+                Icon(
+                  Icons.chevron_right,
+                  color: Colors.grey,
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
 
-class TopBarWidget extends StatelessWidget {
-  const TopBarWidget({
+class _TopBarWidget extends StatelessWidget {
+  const _TopBarWidget({
     Key? key,
   }) : super(key: key);
 
