@@ -9,15 +9,36 @@ class SettingsPage extends StatelessWidget {
     final widthOfDevice = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Column(
-        children: const [
-          TopBarWidget(),
-          Text('Main'),
-          MainSettingsWidget(),
-          Text('Premium'),
-          PremiumSettingsWidget(),
-          SubscribeButtonWidget(),
-          SendReviewButtonWidget(),
-          RateInAppStoreButtonWidget(),
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              TopBarWidget(),
+              Padding(
+                padding: EdgeInsets.only(left: 10, top: 15),
+                child: Text('Main'),
+              ),
+              MainSettingsWidget(),
+              Padding(
+                padding: EdgeInsets.only(left: 10, top: 15),
+                child: Text('Premium'),
+              ),
+              PremiumSettingsWidget(),
+            ],
+          ),
+          Column(
+            children: const [
+              Padding(
+                padding: EdgeInsets.only(top: 18, bottom: 100),
+                child: SubscribeButtonWidget(),
+              ),
+              SendReviewButtonWidget(),
+              Padding(
+                padding: EdgeInsets.only(bottom: 20, top: 10),
+                child: RateInAppStoreButtonWidget(),
+              ),
+            ],
+          ),
         ],
       ),
     );
