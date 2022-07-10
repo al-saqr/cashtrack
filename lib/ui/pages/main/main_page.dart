@@ -29,6 +29,7 @@ class MainPage extends StatelessWidget {
           ),
           actions: actionsList,
           bottom: const TabBar(
+            isScrollable: true,
             indicatorColor: Colors.white,
             tabs: tabs,
           ),

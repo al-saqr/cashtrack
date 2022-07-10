@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       routes: routes,
-      initialRoute: '/',
+      initialRoute: '/settings',
       debugShowCheckedModeBanner: false,
       title: 'Material App',
     );
