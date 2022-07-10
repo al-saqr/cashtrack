@@ -91,124 +91,109 @@ class PremiumSettingsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      flex: 3,
-      child: Column(
-        children: [
-          Flexible(
-            child: TextButton(
-              onPressed: () {},
-              child: Row(
-                children: [
-                  Expanded(
-                      flex: 1, child: Container(color: Colors.transparent)),
-                  Text('Icon set'),
-                  Expanded(
-                    flex: 10,
-                    child: Container(
-                      color: Colors.transparent,
-                    ),
-                  ),
-                  Icon(
-                    Icons.paid_outlined,
-                    color: Colors.green,
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                      color: Colors.transparent,
-                    ),
-                  )
-                ],
+    return Column(
+      children: <TextButton>[
+        TextButton(
+          onPressed: () {},
+          child: Row(
+            children: [
+              Expanded(flex: 1, child: Container(color: Colors.transparent)),
+              Text('Icon set'),
+              Expanded(
+                flex: 10,
+                child: Container(
+                  color: Colors.transparent,
+                ),
               ),
-            ),
-          ),
-          Flexible(
-            child: TextButton(
-              onPressed: () {},
-              child: Row(
-                children: [
-                  Expanded(
-                      flex: 1, child: Container(color: Colors.transparent)),
-                  Text('Backups'),
-                  Expanded(
-                    flex: 10,
-                    child: Container(
-                      color: Colors.transparent,
-                    ),
-                  ),
-                  Icon(
-                    Icons.paid_outlined,
-                    color: Colors.green,
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                      color: Colors.transparent,
-                    ),
-                  )
-                ],
+              Icon(
+                Icons.paid_outlined,
+                color: Colors.green,
               ),
-            ),
+              Expanded(
+                flex: 1,
+                child: Container(
+                  color: Colors.transparent,
+                ),
+              )
+            ],
           ),
-          Flexible(
-            child: TextButton(
-              onPressed: () {},
-              child: Row(
-                children: [
-                  Expanded(
-                      flex: 1, child: Container(color: Colors.transparent)),
-                  Text('Export'),
-                  Expanded(
-                    flex: 10,
-                    child: Container(
-                      color: Colors.transparent,
-                    ),
-                  ),
-                  Icon(
-                    Icons.paid_outlined,
-                    color: Colors.green,
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                      color: Colors.transparent,
-                    ),
-                  )
-                ],
+        ),
+        TextButton(
+          onPressed: () {},
+          child: Row(
+            children: [
+              Expanded(flex: 1, child: Container(color: Colors.transparent)),
+              Text('Backups'),
+              Expanded(
+                flex: 10,
+                child: Container(
+                  color: Colors.transparent,
+                ),
               ),
-            ),
-          ),
-          Flexible(
-            child: TextButton(
-              onPressed: () {},
-              child: Row(
-                children: [
-                  Expanded(
-                      flex: 1, child: Container(color: Colors.transparent)),
-                  Text('Security'),
-                  Expanded(
-                    flex: 10,
-                    child: Container(
-                      color: Colors.transparent,
-                    ),
-                  ),
-                  Icon(
-                    Icons.paid_outlined,
-                    color: Colors.green,
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                      color: Colors.transparent,
-                    ),
-                  )
-                ],
+              Icon(
+                Icons.paid_outlined,
+                color: Colors.green,
               ),
-            ),
+              Expanded(
+                flex: 1,
+                child: Container(
+                  color: Colors.transparent,
+                ),
+              )
+            ],
           ),
-        ],
-      ),
+        ),
+        TextButton(
+          onPressed: () {},
+          child: Row(
+            children: [
+              Expanded(flex: 1, child: Container(color: Colors.transparent)),
+              Text('Export'),
+              Expanded(
+                flex: 10,
+                child: Container(
+                  color: Colors.transparent,
+                ),
+              ),
+              Icon(
+                Icons.paid_outlined,
+                color: Colors.green,
+              ),
+              Expanded(
+                flex: 1,
+                child: Container(
+                  color: Colors.transparent,
+                ),
+              )
+            ],
+          ),
+        ),
+        TextButton(
+          onPressed: () {},
+          child: Row(
+            children: [
+              Expanded(flex: 1, child: Container(color: Colors.transparent)),
+              Text('Security'),
+              Expanded(
+                flex: 10,
+                child: Container(
+                  color: Colors.transparent,
+                ),
+              ),
+              Icon(
+                Icons.paid_outlined,
+                color: Colors.green,
+              ),
+              Expanded(
+                flex: 1,
+                child: Container(
+                  color: Colors.transparent,
+                ),
+              )
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
