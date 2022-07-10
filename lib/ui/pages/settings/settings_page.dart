@@ -11,7 +11,9 @@ class SettingsPage extends StatelessWidget {
       body: Column(
         children: const [
           TopBarWidget(),
+          Text('Main'),
           MainSettingsWidget(),
+          Text('Premium'),
           PremiumSettingsWidget(),
           SubscribeButtonWidget(),
           SendReviewButtonWidget(),
@@ -218,81 +220,69 @@ class MainSettingsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      flex: 3,
-      child: Column(
-        children: [
-          Flexible(
-            child: TextButton(
-              onPressed: () {},
-              child: Row(
-                children: [
-                  Expanded(
-                      flex: 1, child: Container(color: Colors.transparent)),
-                  Text('Currency'),
-                  Expanded(
-                    flex: 10,
-                    child: Container(
-                      color: Colors.transparent,
-                    ),
-                  ),
-                  Text('USD'),
-                  Icon(
-                    Icons.chevron_right,
-                    color: Colors.grey,
-                  ),
-                ],
+    return Column(
+      children: [
+        TextButton(
+          onPressed: () {},
+          child: Row(
+            children: [
+              Expanded(flex: 1, child: Container(color: Colors.transparent)),
+              Text('Currency'),
+              Expanded(
+                flex: 10,
+                child: Container(
+                  color: Colors.transparent,
+                ),
               ),
-            ),
-          ),
-          Flexible(
-            child: TextButton(
-              onPressed: () {},
-              child: Row(
-                children: [
-                  Expanded(
-                      flex: 1, child: Container(color: Colors.transparent)),
-                  Text('Appearance'),
-                  Expanded(
-                    flex: 10,
-                    child: Container(
-                      color: Colors.transparent,
-                    ),
-                  ),
-                  Text('USD'),
-                  Icon(
-                    Icons.chevron_right,
-                    color: Colors.grey,
-                  ),
-                ],
+              Text('USD'),
+              Icon(
+                Icons.chevron_right,
+                color: Colors.grey,
               ),
-            ),
+            ],
           ),
-          Flexible(
-            child: TextButton(
-              onPressed: () {},
-              child: Row(
-                children: [
-                  Expanded(
-                      flex: 1, child: Container(color: Colors.transparent)),
-                  Text('Additionally'),
-                  Expanded(
-                    flex: 10,
-                    child: Container(
-                      color: Colors.transparent,
-                    ),
-                  ),
-                  Text('USD'),
-                  Icon(
-                    Icons.chevron_right,
-                    color: Colors.grey,
-                  ),
-                ],
+        ),
+        TextButton(
+          onPressed: () {},
+          child: Row(
+            children: [
+              Expanded(flex: 1, child: Container(color: Colors.transparent)),
+              Text('Appearance'),
+              Expanded(
+                flex: 10,
+                child: Container(
+                  color: Colors.transparent,
+                ),
               ),
-            ),
+              Text('USD'),
+              Icon(
+                Icons.chevron_right,
+                color: Colors.grey,
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+        TextButton(
+          onPressed: () {},
+          child: Row(
+            children: [
+              Expanded(flex: 1, child: Container(color: Colors.transparent)),
+              Text('Additionally'),
+              Expanded(
+                flex: 10,
+                child: Container(
+                  color: Colors.transparent,
+                ),
+              ),
+              Text('USD'),
+              Icon(
+                Icons.chevron_right,
+                color: Colors.grey,
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
@@ -304,35 +294,34 @@ class TopBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: Container(
-        height: double.infinity,
-        color: Colors.white,
-        child: Row(
-          children: [
-            Expanded(
-              flex: 1,
-              child: TextButton(
-                onPressed: () {},
-                child: const Text('Cancel'),
-              ),
+    return Container(
+      padding: EdgeInsets.only(left: 5, right: 5, top: 12),
+      width: double.infinity,
+      color: Colors.white,
+      child: Row(
+        children: [
+          Expanded(
+            flex: 1,
+            child: TextButton(
+              onPressed: () {},
+              child: const Text('Cancel'),
             ),
-            const Expanded(
-              flex: 3,
-              child: Text(
-                textAlign: TextAlign.center,
-                'Settings',
-              ),
+          ),
+          const Expanded(
+            flex: 3,
+            child: Text(
+              textAlign: TextAlign.center,
+              'Settings',
             ),
-            Expanded(
-              flex: 1,
-              child: TextButton(
-                onPressed: () {},
-                child: const Text('Save'),
-              ),
+          ),
+          Expanded(
+            flex: 1,
+            child: TextButton(
+              onPressed: () {},
+              child: const Text('Save'),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
