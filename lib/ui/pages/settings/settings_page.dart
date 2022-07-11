@@ -8,43 +8,54 @@ class SettingsPage extends StatelessWidget {
     final heightOfDevice = MediaQuery.of(context).size.height;
     final widthOfDevice = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Stack(
+      body: Column(
         children: [
-          Container(
-            color: Colors.black12,
-          ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  _TopBarWidget(),
-                  Padding(
-                    padding: EdgeInsets.only(left: 10, top: 15),
-                    child: Text('Main'),
-                  ),
-                  MainSettingsWidget(),
-                  Padding(
-                    padding: EdgeInsets.only(left: 10, top: 15),
-                    child: Text('Premium'),
-                  ),
-                  PremiumSettingsWidget(),
-                ],
-              ),
-              Column(
-                children: const [
-                  Padding(
-                    padding: EdgeInsets.only(top: 18, bottom: 100),
-                    child: SubscribeButtonWidget(),
-                  ),
-                  SendReviewButtonWidget(),
-                  Padding(
-                    padding: EdgeInsets.only(bottom: 20, top: 10),
-                    child: RateInAppStoreButtonWidget(),
-                  ),
-                ],
-              ),
+              _TopBarWidget(),
+              Container(
+                  color: Colors.black12,
+                  height: 40,
+                  constraints: BoxConstraints(
+                      maxHeight: 40,
+                      minHeight: 40,
+                      maxWidth: widthOfDevice,
+                      minWidth: widthOfDevice),
+                  alignment: Alignment.bottomLeft,
+                  padding: EdgeInsets.only(bottom: 5, left: 10),
+                  child: Text('Main')),
+              MainSettingsWidget(),
+              Container(
+                  color: Colors.black12,
+                  height: 40,
+                  constraints: BoxConstraints(
+                      maxHeight: 40,
+                      minHeight: 40,
+                      maxWidth: widthOfDevice,
+                      minWidth: widthOfDevice),
+                  alignment: Alignment.bottomLeft,
+                  padding: EdgeInsets.only(bottom: 5, left: 10),
+                  child: Text('Premium')),
+              PremiumSettingsWidget(),
             ],
+          ),
+          Container(
+            width: double.infinity,
+            color: Colors.black12,
+            child: Column(
+              children: const [
+                Padding(
+                  padding: EdgeInsets.only(top: 18, bottom: 20),
+                  child: SubscribeButtonWidget(),
+                ),
+                SendReviewButtonWidget(),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 20, top: 10),
+                  child: RateInAppStoreButtonWidget(),
+                ),
+              ],
+            ),
           ),
         ],
       ),
@@ -106,6 +117,11 @@ class SubscribeButtonWidget extends StatelessWidget {
         minimumSize: MaterialStateProperty.all(
           const Size(300, 45),
         ),
+        maximumSize: MaterialStateProperty.all(
+          const Size(400, 45),
+        ),
+        // shape: MaterialStateProperty.all(
+        //     RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
       ),
       child: Text('Subscribe'),
     );
@@ -122,12 +138,11 @@ class PremiumSettingsWidget extends StatelessWidget {
     return Container(
       color: Colors.white,
       child: Column(
-        children: <TextButton>[
+        children: [
           TextButton(
             onPressed: () {},
             child: Row(
               children: [
-                Expanded(flex: 1, child: Container(color: Colors.transparent)),
                 Text('Icon set'),
                 Expanded(
                   flex: 10,
@@ -148,11 +163,11 @@ class PremiumSettingsWidget extends StatelessWidget {
               ],
             ),
           ),
+          Divider(),
           TextButton(
             onPressed: () {},
             child: Row(
               children: [
-                Expanded(flex: 1, child: Container(color: Colors.transparent)),
                 Text('Backups'),
                 Expanded(
                   flex: 10,
@@ -173,11 +188,11 @@ class PremiumSettingsWidget extends StatelessWidget {
               ],
             ),
           ),
+          Divider(),
           TextButton(
             onPressed: () {},
             child: Row(
               children: [
-                Expanded(flex: 1, child: Container(color: Colors.transparent)),
                 Text('Export'),
                 Expanded(
                   flex: 10,
@@ -198,11 +213,11 @@ class PremiumSettingsWidget extends StatelessWidget {
               ],
             ),
           ),
+          Divider(),
           TextButton(
             onPressed: () {},
             child: Row(
               children: [
-                Expanded(flex: 1, child: Container(color: Colors.transparent)),
                 Text('Security'),
                 Expanded(
                   flex: 10,
@@ -236,72 +251,66 @@ class MainSettingsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: Column(
-        children: [
-          TextButton(
-            onPressed: () {},
-            child: Row(
-              children: [
-                Expanded(flex: 1, child: Container(color: Colors.transparent)),
-                Text('Currency'),
-                Expanded(
-                  flex: 10,
-                  child: Container(
-                    color: Colors.transparent,
-                  ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        TextButton(
+          onPressed: () {},
+          child: Row(
+            children: [
+              Text('Currency'),
+              Expanded(
+                child: Container(
+                  color: Colors.transparent,
                 ),
-                Text('USD'),
-                Icon(
-                  Icons.chevron_right,
-                  color: Colors.grey,
-                ),
-              ],
-            ),
+              ),
+              Text('USD'),
+              Icon(
+                Icons.chevron_right,
+                color: Colors.grey,
+              ),
+            ],
           ),
-          TextButton(
-            onPressed: () {},
-            child: Row(
-              children: [
-                Expanded(flex: 1, child: Container(color: Colors.transparent)),
-                Text('Appearance'),
-                Expanded(
-                  flex: 10,
-                  child: Container(
-                    color: Colors.transparent,
-                  ),
+        ),
+        Divider(),
+        TextButton(
+          onPressed: () {},
+          child: Row(
+            children: [
+              Text('Appearance'),
+              Expanded(
+                child: Container(
+                  color: Colors.transparent,
                 ),
-                Text('USD'),
-                Icon(
-                  Icons.chevron_right,
-                  color: Colors.grey,
-                ),
-              ],
-            ),
+              ),
+              Text('USD'),
+              Icon(
+                Icons.chevron_right,
+                color: Colors.grey,
+              ),
+            ],
           ),
-          TextButton(
-            onPressed: () {},
-            child: Row(
-              children: [
-                Expanded(flex: 1, child: Container(color: Colors.transparent)),
-                Text('Additionally'),
-                Expanded(
-                  flex: 10,
-                  child: Container(
-                    color: Colors.transparent,
-                  ),
+        ),
+        Divider(),
+        TextButton(
+          onPressed: () {},
+          child: Row(
+            children: [
+              Text('Additionally'),
+              Expanded(
+                child: Container(
+                  color: Colors.transparent,
                 ),
-                Text('USD'),
-                Icon(
-                  Icons.chevron_right,
-                  color: Colors.grey,
-                ),
-              ],
-            ),
+              ),
+              Text('USD'),
+              Icon(
+                Icons.chevron_right,
+                color: Colors.grey,
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
