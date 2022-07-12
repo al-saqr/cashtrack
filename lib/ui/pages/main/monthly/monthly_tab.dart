@@ -47,7 +47,6 @@ class MonthlyTabPage extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                      vertical: 6.0,
                       horizontal: 12.0,
                     ),
                     child: Container(
