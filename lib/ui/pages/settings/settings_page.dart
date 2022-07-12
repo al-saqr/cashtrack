@@ -331,7 +331,9 @@ class _TopBarWidget extends StatelessWidget {
           Expanded(
             flex: 1,
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
               child: const Text('Cancel'),
             ),
           ),
