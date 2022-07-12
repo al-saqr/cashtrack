@@ -80,9 +80,7 @@ class MonthlyTabPage extends StatelessWidget {
             },
             itemCount: 10,
             separatorBuilder: (BuildContext context, int index) {
-              return SizedBox(
-                height: 25,
-              );
+              return Divider();
             },
           ),
         )
