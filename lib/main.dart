@@ -11,13 +11,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        canvasColor: Colors.red.shade300,
+        canvasColor: Color(0xFFF8777D),
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.red.shade300,
+          backgroundColor: Color(0xFFF8777D),
         ),
       ),
       routes: routes,
-      initialRoute: '/',
+      initialRoute: '/settings',
       debugShowCheckedModeBanner: false,
       title: 'Material App',
     );
