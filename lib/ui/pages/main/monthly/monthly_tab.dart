@@ -53,22 +53,28 @@ class MonthlyTabPage extends StatelessWidget {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8.0),
                           color: Colors.white),
-                      child: ListTile(
-                        minVerticalPadding: 8.0,
-                        dense: true,
-                        title: const Text(
-                          'Credit card',
-                          style: TextStyle(
+                      child: TextButton(
+                        style: ButtonStyle(
+                            padding:
+                                MaterialStateProperty.all(EdgeInsets.zero)),
+                        onPressed: () {},
+                        child: ListTile(
+                          minVerticalPadding: 8.0,
+                          dense: true,
+                          title: const Text(
+                            'Credit card',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black45),
+                          ),
+                          subtitle: Text(
+                            '\$ 532',
+                            style: TextStyle(
+                              height: 2,
+                              fontSize: 18,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black45),
-                        ),
-                        subtitle: Text(
-                          '\$ 532',
-                          style: TextStyle(
-                            height: 2,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.red.shade300,
+                              color: Colors.red.shade300,
+                            ),
                           ),
                         ),
                       ),
@@ -79,7 +85,7 @@ class MonthlyTabPage extends StatelessWidget {
             },
             itemCount: 10,
             separatorBuilder: (BuildContext context, int index) {
-              return Divider();
+              return const SizedBox(height: 6);
             },
           ),
         )
