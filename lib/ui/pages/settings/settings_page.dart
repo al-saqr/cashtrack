@@ -27,7 +27,7 @@ class SettingsPage extends StatelessWidget {
                     alignment: Alignment.bottomLeft,
                     padding: EdgeInsets.only(bottom: 5, left: 10),
                     child: Text('Main')),
-                MainSettingsWidget(),
+                const MainSettingsWidget(),
                 Container(
                     color: Colors.black12,
                     height: 40,
@@ -47,15 +47,9 @@ class SettingsPage extends StatelessWidget {
               color: Colors.black12,
               child: Column(
                 children: const [
-                  Padding(
-                    padding: EdgeInsets.only(top: 18, bottom: 20),
-                    child: SubscribeButtonWidget(),
-                  ),
+                  SubscribeButtonWidget(),
                   SendReviewButtonWidget(),
-                  Padding(
-                    padding: EdgeInsets.only(bottom: 20, top: 10),
-                    child: RateInAppStoreButtonWidget(),
-                  ),
+                  RateInAppStoreButtonWidget(),
                 ],
               ),
             ),
@@ -73,15 +67,21 @@ class RateInAppStoreButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () {},
-      style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(Colors.black12),
-        minimumSize: MaterialStateProperty.all(
-          const Size(300, 45),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20, top: 10),
+      child: TextButton(
+        onPressed: () {},
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all(Colors.white),
+          minimumSize: MaterialStateProperty.all(
+            const Size(300, 45),
+          ),
+        ),
+        child: const Text(
+          'Rate in App Store',
+          style: TextStyle(color: Color(0xFF65BCBF)),
         ),
       ),
-      child: Text('Rate in App Stpre'),
     );
   }
 }
@@ -96,12 +96,15 @@ class SendReviewButtonWidget extends StatelessWidget {
     return TextButton(
       onPressed: () {},
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(Colors.black12),
+        backgroundColor: MaterialStateProperty.all(Colors.white),
         minimumSize: MaterialStateProperty.all(
           const Size(300, 45),
         ),
       ),
-      child: Text('Send your review'),
+      child: const Text(
+        'Send your review',
+        style: TextStyle(color: Color(0xFF65BCBF)),
+      ),
     );
   }
 }
@@ -113,20 +116,26 @@ class SubscribeButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () {},
-      style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(const Color(0xFF65BCBF)),
-        minimumSize: MaterialStateProperty.all(
-          const Size(300, 45),
+    return Padding(
+      padding: const EdgeInsets.only(top: 18, bottom: 20),
+      child: TextButton(
+        onPressed: () {},
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all(const Color(0xFF65BCBF)),
+          minimumSize: MaterialStateProperty.all(
+            const Size(300, 45),
+          ),
+          maximumSize: MaterialStateProperty.all(
+            const Size(400, 45),
+          ),
+          // shape: MaterialStateProperty.all(
+          //     RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
         ),
-        maximumSize: MaterialStateProperty.all(
-          const Size(400, 45),
+        child: Text(
+          'Subscribe',
+          style: TextStyle(color: Colors.white),
         ),
-        // shape: MaterialStateProperty.all(
-        //     RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
       ),
-      child: Text('Subscribe'),
     );
   }
 }
@@ -166,7 +175,7 @@ class PremiumSettingsWidget extends StatelessWidget {
               ],
             ),
           ),
-          Divider(),
+          Divider(height: 5),
           TextButton(
             onPressed: () {},
             child: Row(
@@ -191,7 +200,7 @@ class PremiumSettingsWidget extends StatelessWidget {
               ],
             ),
           ),
-          Divider(),
+          Divider(height: 5),
           TextButton(
             onPressed: () {},
             child: Row(
@@ -216,7 +225,7 @@ class PremiumSettingsWidget extends StatelessWidget {
               ],
             ),
           ),
-          Divider(),
+          Divider(height: 5),
           TextButton(
             onPressed: () {},
             child: Row(
@@ -275,7 +284,9 @@ class MainSettingsWidget extends StatelessWidget {
             ],
           ),
         ),
-        Divider(),
+        Divider(
+          height: 5,
+        ),
         TextButton(
           onPressed: () {},
           child: Row(
@@ -294,7 +305,7 @@ class MainSettingsWidget extends StatelessWidget {
             ],
           ),
         ),
-        Divider(),
+        Divider(height: 5),
         TextButton(
           onPressed: () {},
           child: Row(
