@@ -8,56 +8,59 @@ class SettingsPage extends StatelessWidget {
     final heightOfDevice = MediaQuery.of(context).size.height;
     final widthOfDevice = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Column(
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _TopBarWidget(),
-              Container(
-                  color: Colors.black12,
-                  height: 40,
-                  constraints: BoxConstraints(
-                      maxHeight: 40,
-                      minHeight: 40,
-                      maxWidth: widthOfDevice,
-                      minWidth: widthOfDevice),
-                  alignment: Alignment.bottomLeft,
-                  padding: EdgeInsets.only(bottom: 5, left: 10),
-                  child: Text('Main')),
-              MainSettingsWidget(),
-              Container(
-                  color: Colors.black12,
-                  height: 40,
-                  constraints: BoxConstraints(
-                      maxHeight: 40,
-                      minHeight: 40,
-                      maxWidth: widthOfDevice,
-                      minWidth: widthOfDevice),
-                  alignment: Alignment.bottomLeft,
-                  padding: EdgeInsets.only(bottom: 5, left: 10),
-                  child: Text('Premium')),
-              PremiumSettingsWidget(),
-            ],
-          ),
-          Container(
-            width: double.infinity,
-            color: Colors.black12,
-            child: Column(
-              children: const [
-                Padding(
-                  padding: EdgeInsets.only(top: 18, bottom: 20),
-                  child: SubscribeButtonWidget(),
-                ),
-                SendReviewButtonWidget(),
-                Padding(
-                  padding: EdgeInsets.only(bottom: 20, top: 10),
-                  child: RateInAppStoreButtonWidget(),
-                ),
+      body: ColoredBox(
+        color: Colors.white,
+        child: Column(
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const _TopBarWidget(),
+                Container(
+                    color: Colors.black12,
+                    height: 40,
+                    constraints: BoxConstraints(
+                        maxHeight: 40,
+                        minHeight: 40,
+                        maxWidth: widthOfDevice,
+                        minWidth: widthOfDevice),
+                    alignment: Alignment.bottomLeft,
+                    padding: EdgeInsets.only(bottom: 5, left: 10),
+                    child: Text('Main')),
+                MainSettingsWidget(),
+                Container(
+                    color: Colors.black12,
+                    height: 40,
+                    constraints: BoxConstraints(
+                        maxHeight: 40,
+                        minHeight: 40,
+                        maxWidth: widthOfDevice,
+                        minWidth: widthOfDevice),
+                    alignment: Alignment.bottomLeft,
+                    padding: EdgeInsets.only(bottom: 5, left: 10),
+                    child: Text('Premium')),
+                PremiumSettingsWidget(),
               ],
             ),
-          ),
-        ],
+            Container(
+              width: double.infinity,
+              color: Colors.black12,
+              child: Column(
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.only(top: 18, bottom: 20),
+                    child: SubscribeButtonWidget(),
+                  ),
+                  SendReviewButtonWidget(),
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 20, top: 10),
+                    child: RateInAppStoreButtonWidget(),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -113,7 +116,7 @@ class SubscribeButtonWidget extends StatelessWidget {
     return TextButton(
       onPressed: () {},
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(Colors.green),
+        backgroundColor: MaterialStateProperty.all(const Color(0xFF65BCBF)),
         minimumSize: MaterialStateProperty.all(
           const Size(300, 45),
         ),
